@@ -1,0 +1,100 @@
+
+<%- include('include/header'); -%>
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-md-4 p-3">
+      <div class=" d-flex bg-white py-3 px-4 shadow-card">
+          <span ><i class="bi bi-people fs-1" style="margin-right: 30px"></i></span>
+          <div class="d-grid">
+              <span class="fs-4">1694</span>
+              <span class="fs-6">Client</span>
+          </div>
+      </div>
+  </div>
+  
+  <div class="col-12 col-md-4 p-3">
+      <div class=" d-flex bg-white py-3 px-4 shadow-card">
+          <span ><i class="bi bi-pin-map fs-1" style="margin-right: 30px"></i></span>
+          <div class="d-grid">
+              <span class="fs-4">17</span>
+              <span class="fs-6">Flights</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-12 col-md-4 p-3">
+    <div class=" d-flex bg-white py-3 px-4 shadow-card">
+        <span ><i class="bi bi-geo-alt fs-1" style="margin-right: 30px"></i></span>
+        <div class="d-grid">
+            <span class="fs-4">21</span>
+            <span class="fs-6">Ville</span>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+
+<div class="card">
+    <div class="table-responsive">
+      <table id="example" class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Full Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Of Joining</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+          </tr>
+        </thead>
+        <tbody>
+
+               
+          <tr>
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs">{{ $user->id }}</h6>
+            </td>
+              
+            <td class="align-middle text-center">
+                <div>
+                  <img src="{{ asset('images/'.$user->photo) }}" class="avatar avatar-sm">
+                </div>
+            </td>
+
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs">{{ $user->name." ".$user->lastname }}</h6>
+            </td>
+
+            <td class="align-middle text-center text-sm">
+                <p class="text-xs text-secondary mb-0">{{ $user->email }}</p>
+            </td>
+
+            <td class="align-middle text-center">
+              <span class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
+            </td>
+
+            <td class="align-middle text-center">
+              <div class="form-check form-switch  px-0">
+                <form action="{{ route('users.updateEtat', $user->id) }}" method="post">
+                      <input class="form-check-input mx-1 my-2 float-none" type="checkbox" onChange="this.form.submit()" id="etat" name="etatQ" >
+                      
+              </form>
+            </div>
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+  -->
+    
+
+<%- include('include/footer'); -%>

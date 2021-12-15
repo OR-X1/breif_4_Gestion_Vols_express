@@ -1,0 +1,71 @@
+
+<%- include('include/header'); -%>
+
+
+<div class="card">
+    <div class="table-responsive">
+      <table id="example" class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Capacity</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date depart</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">H depart</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">H arrive</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prix</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Ville</th>
+          </tr>
+        </thead>
+        <tbody>
+
+<!-- @foreach ($users as $user) -->
+
+            <% flights.forEach(function(flight){ %>
+
+          <tr>
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= flight.id %></h6>
+            </td>
+              
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= flight.name %></h6>
+            </td>
+
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= flight.capacity %></h6>
+            </td>
+
+            <td class="align-middle text-center text-sm">
+                <p class="text-xs text-secondary mb-0"><%= flight.date_depart %></p>
+            </td>
+
+            <td class="align-middle text-center">
+              <span class="text-secondary text-xs font-weight-bold"><%= flight.h_depart %></span>
+            </td>
+
+            <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold"><%= flight.h_arrive %></span>
+              </td>
+
+              <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold"><%= flight.prix %></span>
+              </td>
+
+              <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold"><%= flight.id_ville %></span>
+              </td>
+
+          </tr>
+
+          <% }); %>
+
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+ 
+    
+
+<%- include('include/footer'); -%>

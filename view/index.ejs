@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safiair</title>
+    <!-- <link rel="stylesheet" href="../style/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="style/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style/style.css"> -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body style="background-color: #F7F7F7;">
+    <!-- header -->
+    <header class="vh-100 " style="background-image: url('image/dave-hoefler-zN7wRrxXjik-unsplash.jpg');background-position: center;background-size: cover;position: relative;margin-bottom: 100px;">
+        <div class="container">
+
+            <!-- menu  -->
+                <nav class="navbar py-5 navbar-expand-lg navbar-light">
+                    <a class="navbar-brand p-0" href="/">
+                        <!-- <h3 class="logo">Takeit Easy</h3> -->
+                        <img src="image/Safiair.png" height="50px" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav navList">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+            <!-- end meu -->
+            <!-- hero  -->
+            <div class="hero ">
+                <!-- mt-5 -->
+                <div class="row">
+                    <div class="col-8 hero-title">
+                        <h1 style="text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.76);font-size: 50px">Get your vacation running</h1>
+                    </dixv>
+                </div>
+                <form action="/" method="post" style="margin-top: 40px;">
+                    <!-- galssmorphizme -->
+                    <div class="galssmorphizme mt-5" >
+                        <nav class="navbar navbar-expand-lg navbar-light p-0">
+                            <ul class="navbar-nav p-0">
+                                <li class="nav-item">
+                                    <a class="nav-link tablink active text-light" onclick="openCity(event, 'a4');" href="#">Flight</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                            <div id="a4" class="row-content row city w3-animate-right pt-4">
+                                <div class="col border-end">
+                                    <div class="mb-3">
+                                        <label for="To" class="form-label text-light">To</label>
+                                        <select class="form-select border-0 ps-0 text-light" name="id_ville" aria-label="Default select example">
+                                            <option selected>Where you want to go</option>
+                                            <% villes.forEach(function(ville){ %>
+                                                <option value="<%= ville.id %>"><%= ville.name_ville %></option>
+                                            <% }); %>
+                                        </select>
+                                    </div>
+        
+                                </div>
+                                <div class="col border-end">
+                                    <div class="mb-3">
+                                        <label for="To" class="form-label text-light">date</label>
+                                        <input class="form-control border-0 ps-0 text-light" type="date" name="date_depart" id="date_depart">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col border-end">
+                                    <div class="mb-3">
+                                        <label for="To" class="form-label text-light">h_depart</label>
+                                        <select class="form-select border-0 ps-0 text-light" name="h_depart" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="9:00">9:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="To" class="form-label text-light">Travellers</label>
+
+                                        <input class="form-control border-0 ps-0 text-light" name="nb_place" type="number" min="1" max="20" value="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                        
+
+                        <script>
+                            function openCity(evt, contentName) {
+                            var i, x, tablinks;
+                            x = document.getElementsByClassName("city");
+                            for (i = 0; i < x.length; i++) {
+                                x[i].style.display = "none";
+                            }
+                            tablinks = document.getElementsByClassName("tablink");
+                            console.log(tablinks.length);
+                                for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                }
+                                document.getElementById(contentName).style.display = "flex";
+                                evt.currentTarget.className += " active";
+                            }
+                        </script>
+
+                    </div>
+                    <!-- end galssmorphizme -->
+
+                    <div class="d-flex mt-5 justify-content-between">
+                        <div class="py-2">
+                            <span class="py-2">
+                                <button type="submit" class="btn py-2 text-light" style="background-color: #D7E5E9;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16" stroke='#999'>
+                                        <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+                                    </svg>
+                                </button>
+                                <span class="text-light mx-3">Filter your selection</span>
+                            </span>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="btn py-3 px-5 text-light" style="background-color: #4FB1D3;">Search flight</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <section class="container" >
+        <div class="">
+            
+            <% if (flights.lenght != 0) { %>
+
+                <% flights.forEach(function(flight){ %>
+
+                    <div class="col-12 mb-5">
+                        <div class="card mb-3 ">
+                          <div class="row g-0">
+                            <div class="col-md-3">
+                              <img src="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/3/8/1/38175c0ff3_95327_composition-air.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-7 border-end">
+                              <div class="card-body">
+                                <h3 class="card-title font-weight-bold"><%= flight.name %></h3>
+                                <p class="card-text"><%= flight.description %></p>
+                                <p class="card-text"><small class="text-muted"><%= flight.h_depart %> To <%= flight.h_arrive %></small></p>
+                              </div>
+                            </div>
+                            <div class="col-2 p-3">
+                                  <div class="d-inline text-end">
+                                      <h3 class="mt-0 font-weight-bold">$<%= flight.prix %></h3>
+                                      <!-- <button class="btn btn-primary float-end py-2 w-100 border-0 mt-5 " style="background-color: #4FB1D3;">Book now</button> -->
+                                      <button type="button" class="btn btn-primary float-end py-2 w-100 border-0 mt-5 " style="background-color: #4FB1D3;" data-bs-toggle="modal" data-bs-target="#editModal<%= flight.id %>">
+                                        Book now
+                                      </button>
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="modal fade" id="editModal<%= flight.id %>" tabindex="-1" role="dialog" aria-labelledby="editModal<%= flight.id %>" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+
+                    <form action="/client_reserv" method="POST">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Book now</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        </div>
+                        <div class="modal-body row">
+
+                            <div class="form-group col-6">
+                              <label for="recipient-name" class="col-form-label">First Name:</label>
+                              <input type="text" class="form-control" placeholder="First Name" value="" name="nom">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="recipient-name" class="col-form-label">Last Name:</label>
+                                <input type="text" class="form-control" placeholder="Last Name" value="" name="prenom">
+                              </div>
+
+                        </div>
+                        <div class="modal-body row">
+
+                            <div class="form-group col-6">
+                                <label for="recipient-name" class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" placeholder="Email" value="" name="email">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="recipient-name" class="col-form-label">Phone:</label>
+                                <input type="text" class="form-control" placeholder="Phone" value="" name="tele">
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn bg-gradient-success">Book</button>
+                        </div>
+                      </form>
+                
+                      </div>
+                    </div>
+                  </div>
+                  
+                <% }); %>
+
+            <% } else{ %> 
+
+                <h3>No matching results were found</h3>
+
+                    
+                
+            <% } %>
+
+        </div>
+    </section>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+
+
+</body>
+</html>

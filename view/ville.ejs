@@ -1,0 +1,81 @@
+
+<%- include('include/header'); -%>
+
+
+<div class="card">
+    <div class="table-responsive">
+      <table id="example" class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ville Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+            <% villes.forEach(function(ville){ %>
+               
+          <tr>
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= ville.id %></h6>
+            </td>
+              
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= ville.name_ville %></h6>
+            </td>
+
+            <td class="align-middle text-center">
+                 
+              <form action="#" method="POST">
+                <button type="button" class="text-secondary font-weight-bold text-xs mx-2 border-0" style="background-color: transparent" data-bs-toggle="modal" data-bs-target="#editModal<%= ville.id %>">
+                  Edit
+                </button>
+                <button type="submit" class="text-danger font-weight-bold text-xs border-0" style="background-color: transparent" onclick="return confirm('Are you sure?')" >Delete</button>
+              </form>
+            </td>
+
+          </tr>
+
+
+          <div class="modal fade" id="editModal<%= ville.id %>" tabindex="-1" role="dialog" aria-labelledby="editModal<%= ville.id %>" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+        
+                <form action="#" method="POST">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Update Extras</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Extras Name:</label>
+                      <input type="text" class="form-control" placeholder="Categorie Name" value="<%= ville.name_ville %>" name="name">
+                    </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn bg-gradient-warning">Update</button>
+                </div>
+              </form>
+        
+              </div>
+            </div>
+          </div>
+
+          <% }); %>
+
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+ 
+    
+
+<%- include('include/footer'); -%>

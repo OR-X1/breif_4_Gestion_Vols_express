@@ -1,0 +1,229 @@
+body{
+    background-color: #F3F3F3 !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.img_header{
+    width: 100vw;
+}
+.button-opacity-50{
+    background-color: rgba(255, 255, 255, 0.205);
+}
+.size-50{
+    font-size: 50px;
+}
+.user{
+    padding-left: 12px;
+}
+.user-hover:hover{
+    color: black;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    padding: 1px 0px 1px 12px;
+    border-radius:  0px 25px 25px 0px;
+}
+.user a{
+    color: white;
+}
+.user-hover:hover a {
+    color: black;
+}
+/* droopify */
+.dropify-wrapper{
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+  }
+/* end dropify */
+.color-label {
+    color: #929292;
+}
+.border-radius {
+    border-radius: 13px;
+}
+.size-14 {
+    font-size: 14px;
+}
+.size-12 {
+    font-size: 12px;
+}
+.div-hover-out {
+    background-color: #5b90f93d;
+    transition: 0.5s;
+}
+.div-hover-in {
+    background-color: #0074FA;
+    transition: 0.5s;
+}
+
+.btn-more:hover .div-hover-in {
+    transition: 0.5s;
+    background-color: #0267DC;
+}
+.btn-more:hover .div-hover-out {
+    transition: 1s;
+    background-color: #0055ff69;
+}
+.icon-More {
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+}
+.div-more-option {
+    width: 150px;
+    border-radius: 7px;
+    top: 59% !important;
+    left: 95.5% !important;
+    display: none;
+    z-index: 10;
+}
+.div-more-option-click {
+    display: block;
+    transition: 0.5s;
+}
+.div-more-option p {
+    padding: 10px 5px;
+    margin: 0;
+}
+.div-more-option p:hover {
+    background-color: rgba(192, 192, 192, 0.308);
+}
+.divItems {
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+@media only screen and (max-width: 800px) {
+    .divItems {
+        grid-template-columns: auto;
+    }
+}
+.shadowEffect{
+   box-shadow:  0px 2px 20px #18274b1f;
+}
+/* home page */
+.button-opacity-50{
+    background-color: rgba(255, 255, 255, 0.205);
+    /* color: red; */
+}
+.size-50{
+    font-size: 48px;
+    font-weight: 500;
+}
+.header-height{
+  margin: 7%;
+}
+@media only screen and (max-width: 1000px) {
+    .size-50{
+      font-size: 35px;
+  }
+  .size-20{
+      font-size: 14px;
+  }
+  .header-height{
+    margin: 2%;
+  }
+
+  .bg-navbar-res{
+    background-color: rgb(24, 24, 24);
+  }
+
+  .img_header{
+    top: 77px;
+  }
+}
+@media only screen and (max-width: 600px) {
+    .size-50{
+      font-size: 20px;
+  }
+  .size-20{
+      font-size: 13px;
+  }
+  .btn-header{
+    transform: scale(0.7);
+  }
+}
+/* end home page */
+
+.card .card-body{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+
+
+.img-ithem{
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .img-ithem{
+        object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 0;
+    }
+}
+
+
+.dropdown .dropdown-toggle:after, .dropup .dropdown-toggle:after {
+    display: none;
+}
+
+.ithem-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+    .ithem-description{
+        padding-right: 20px !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        height: 38.5px;
+    }
+
+
+
+    .dropdown .dropdown-menu:before {
+        left: 115px !important;
+    }
+
+    .dropdown:not(.dropdown-hover) .dropdown-menu {
+        inset: 0px auto auto -95px !important;
+    }
+
+    .form-control:focus {
+        color: #495057 !important;
+        background-color: #fff !important;
+        border-color: #93a0e2 !important;
+        box-shadow: 0 0 0 2px #aebde9 !important;
+    }
+
+
+
+    .image-side{
+    
+        line-height: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        }
+        .sircle-image{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    .progress-bar {
+        height: 12px !important;
+        margin-top: -5px !important;
+    }
