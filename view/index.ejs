@@ -147,10 +147,12 @@
     </header>
     <!-- end header -->
 
+  
+
     <section class="container" >
         <div class="">
             
-            <% if (flights.lenght != 0) { %>
+            <% if (flights != "") { %>
 
                 <% flights.forEach(function(flight){ %>
 
@@ -191,6 +193,12 @@
                             <span aria-hidden="true">×</span>
                           </button>
                         </div>
+
+
+                        <input type="hidden" class="form-control" placeholder="Email" value="<%= flight.id %>" name="avion_id">
+                        <input type="hidden" class="form-control" placeholder="Email" value="<%= flight.capacity %>" name="capacity">
+
+
                         <div class="modal-body row">
 
                             <div class="form-group col-6">
@@ -205,16 +213,37 @@
                         </div>
                         <div class="modal-body row">
 
+                            
                             <div class="form-group col-6">
                                 <label for="recipient-name" class="col-form-label">Email:</label>
-                                <input type="text" class="form-control" placeholder="Email" value="" name="email">
+                                <input type="email" class="form-control" placeholder="Email" value="" name="email">
                             </div>
                             <div class="form-group col-6">
                                 <label for="recipient-name" class="col-form-label">Phone:</label>
-                                <input type="text" class="form-control" placeholder="Phone" value="" name="tele">
+                                <input type="number" class="form-control" placeholder="Phone" value="" name="tele">
                             </div>
 
                         </div>
+
+                        <!-- <div class="modal-body row">
+
+                            <div class="form-group col-12">
+                                <label for="recipient-name" class="col-form-label">Extras:</label>
+
+                                <select class="form-select border-0 ps-0 text-light" name="id_ville" aria-label="Default select example">
+                                    <%# villes.forEach(function(extra){ %>
+                                        <option value="<%# extra.id %>"><%# extra.id %></option>
+                                    <%# }); %>
+                                </select>
+
+                                
+                            </div>
+
+                        </div> -->
+
+                        
+
+                        
 
                         <div class="modal-footer">
                           <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>

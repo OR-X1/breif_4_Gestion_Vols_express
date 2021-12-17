@@ -15,24 +15,24 @@
         <tbody>
 
 
-            <% villes.forEach(function(ville){ %>
-               
+    <% villes.forEach(function(ville){ %>
+
           <tr>
             <td class="align-middle text-center">
                 <h6 class="mb-0 text-xs"><%= ville.id %></h6>
             </td>
-              
+
             <td class="align-middle text-center">
                 <h6 class="mb-0 text-xs"><%= ville.name_ville %></h6>
             </td>
 
             <td class="align-middle text-center">
-                 
+
               <form action="#" method="POST">
                 <button type="button" class="text-secondary font-weight-bold text-xs mx-2 border-0" style="background-color: transparent" data-bs-toggle="modal" data-bs-target="#editModal<%= ville.id %>">
                   Edit
                 </button>
-                <button type="submit" class="text-danger font-weight-bold text-xs border-0" style="background-color: transparent" onclick="return confirm('Are you sure?')" >Delete</button>
+                <a href="/delete_ville/<%= ville.id %>" class="text-danger font-weight-bold text-xs border-0" style="background-color: transparent" onclick="return confirm('Are you sure?')" >Delete</a>
               </form>
             </td>
 
@@ -43,32 +43,33 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
         
-                <form action="#" method="POST">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Update Extras</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Extras Name:</label>
-                      <input type="text" class="form-control" placeholder="Categorie Name" value="<%= ville.name_ville %>" name="name">
-                    </div>
-                  
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn bg-gradient-warning">Update</button>
-                </div>
+                <form action="/update_ville" method="POST">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Extras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Extras Name:</label>
+                        <input type="hidden" class="form-control" placeholder="Extras Name" value="<%= ville.id %>" name="id">
+                        <input type="text" class="form-control" placeholder="Extras Name" value="<%= ville.name_ville %>" name="name_ville">
+                      </div>
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn bg-gradient-warning">Update</button>
+                  </div>
               </form>
         
               </div>
             </div>
           </div>
 
-          <% }); %>
+    <% }); %>
 
         </tbody>
       </table>

@@ -36,7 +36,7 @@
                 <button type="button" class="text-secondary font-weight-bold text-xs mx-2 border-0" style="background-color: transparent" data-bs-toggle="modal" data-bs-target="#editModal<%= extra.id %>">
                   Edit
                 </button>
-                <button type="submit" class="text-danger font-weight-bold text-xs border-0" style="background-color: transparent" onclick="return confirm('Are you sure?')" >Delete</button>
+                <a href="/delete_extras/<%= extra.id %>" class="text-danger font-weight-bold text-xs border-0" style="background-color: transparent" onclick="return confirm('Are you sure?')" >Delete</a>
               </form>
             </td>
 
@@ -46,8 +46,8 @@
           <div class="modal fade" id="editModal<%= extra.id %>" tabindex="-1" role="dialog" aria-labelledby="editModal<%= extra.id %>" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-        
-                <form action="#" method="POST">
+
+                <form action="/update_extras" method="POST">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Update Extras</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -55,21 +55,22 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  
+
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Extras Name:</label>
-                      <input type="text" class="form-control" placeholder="Categorie Name" value="<%= extra.choix %>" name="name">
+                      <input type="hidden" class="form-control" placeholder="Extras Name" value="<%= extra.id %>" name="id">
+                      <input type="text" class="form-control" placeholder="Extras Name" value="<%= extra.choix %>" name="choix">
                     </div>
-                  
+
                 </div>
                 <div class="modal-body">
                   
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Extras Prix:</label>
-                    <input type="text" class="form-control" placeholder="Categorie Name" value="<%= extra.prix %>" name="name">
+                    <input type="text" class="form-control" placeholder="Extras Prix" value="<%= extra.prix %>" name="prix">
                   </div>
-                
-              </div>
+
+                </div>
                 <div class="modal-footer">
                   <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="submit" class="btn bg-gradient-warning">Update</button>

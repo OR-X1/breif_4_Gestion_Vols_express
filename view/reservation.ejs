@@ -1,0 +1,56 @@
+
+<%- include('include/header'); -%>
+
+
+<div class="card">
+    <div class="table-responsive">
+      <table id="example" class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Client Full name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Vole Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">number of places</th>
+          </tr>
+        </thead>
+        <tbody>
+
+<!-- @foreach ($users as $user) -->
+
+            <% reservations.forEach(function(reservation){ %>
+
+          <tr>
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= reservation.id %></h6>
+            </td>
+              
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= reservation.nom %> <%= reservation.prenom %></h6>
+            </td>
+
+            <td class="align-middle text-center">
+                <h6 class="mb-0 text-xs"><%= reservation.name %></h6>
+            </td>
+
+            <td class="align-middle text-center text-sm">
+                <p class="text-xs text-secondary mb-0">$<%= reservation.prix %></p>
+            </td>
+
+            <td class="align-middle text-center">
+              <span class="text-secondary text-xs font-weight-bold"><%= reservation.nb_place %></span>
+            </td>
+
+          </tr>
+
+          <% }); %>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+<%- include('include/footer'); -%>
