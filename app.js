@@ -182,7 +182,7 @@ app.post('/client_reserv', (req, res) => {
                     return log('Error occurs');
                 }
               });
-        }     
+        }    
     });
 
   let sql_avion = `INSERT INTO client (nom, prenom, email, tele) VALUES ('${nom}', '${prenom}', '${email}', '${tele}');`;
